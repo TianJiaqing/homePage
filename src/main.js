@@ -4,4 +4,7 @@ import './iconfont.css'
 import './common.css'
 import App from './App.vue'
 import { router } from './router/index'
-createApp(App).use(router).mount('#app')
+
+import { v_directive } from '@utils/vue_instruct'
+const app = createApp(App)
+app.use(router).use(v_directive).mount('#app')

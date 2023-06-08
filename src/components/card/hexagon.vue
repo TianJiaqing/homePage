@@ -1,5 +1,6 @@
 
 <template>
+	<!-- 六边形头像框 -->
 	<div class="wrap">
 		<div class="left common"></div>
 		<div class="right common"></div>

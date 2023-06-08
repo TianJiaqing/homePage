@@ -3,9 +3,9 @@
 	<!-- 顶部导航栏 -->
 	<div class="navigation_bar_pc" @click="scaleBar">
 		<ul>
-			<li v-for="item in 5" :key="item">
-				<span class="iconfont icon-menu"></span
-				><span class="icon_text">{{ item }}文字</span>
+			<li v-for="({ title, icon }, index) in list" :key="index">
+				<span :class="icon" class="iconfont"></span>
+				<span class="icon_text">{{ title }}</span>
 			</li>
 		</ul>
 	</div>
@@ -21,6 +21,25 @@
 			root.setAttribute("style", "--width:150px;--vis:inline;");
 		}
 	};
+
+	const list = [
+		{
+			title: "一个首页",
+			icon: "icon-iconhuaban1-15",
+		},
+		{
+			title: "科技感",
+			icon: "icon-keji",
+		},
+		{
+			title: "qiuzhi",
+			icon: "icon-jianli",
+		},
+		{
+			title: "BOLG",
+			icon: "icon-boke1",
+		},
+	];
 </script>
 
 <style scoped lang="less">
@@ -29,12 +48,12 @@
 		--vis: inline;
 
 		width: var(--width);
-		background: linear-gradient(
-			rgba(25, 202, 173, 0.6),
-			rgba(25, 202, 173, 0.9),
-			rgba(25, 202, 173, 0.4)
-		);
-		// background-color: #DC143C;
+		// background: linear-gradient(
+		// 	rgba(25, 202, 173, 0.6),
+		// 	rgba(25, 202, 173, 0.9),
+		// 	rgba(25, 202, 173, 0.4)
+		// );
+		background-color: #fff;
 		transition: width 0.5s ease-in-out;
 		height: 100vh;
 		.icon_text {
@@ -49,9 +68,13 @@
 			li {
 				white-space: nowrap;
 				padding: 15px;
+				color: #000;
 				&:hover {
-					// background-color: ;
-					// text-decoration: var(--vis);
+					color: #000000;
+					text-decoration: underline;
+				}
+				span {
+					line-height: 20px;
 				}
 			}
 		}
@@ -60,5 +83,6 @@
 		width: 40px;
 		display: inline-block;
 		text-align: center;
+		font-size: 20px;
 	}
 </style>

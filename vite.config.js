@@ -7,7 +7,7 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "./src"),
       "@pages": resolve(__dirname, "./src/pages"),
-      "@util": resolve(__dirname, "./src/utils"),
+      "@utils": resolve(__dirname, "./src/utils"),
 
     }
   },
