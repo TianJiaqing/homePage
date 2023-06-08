@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+button {
+  font-size: 16px;
+  padding: 8px 15px;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* 自定义滚动轴样式 */
+.scroll_full::-webkit-scrollBar {
+  width: 5px;
+  /*垂直方向的宽*/
+  height: 7px;
+  /*水平方向的宽*/
+}
+
+.scroll_full::-webkit-scrollBar-thumb {
+  border-radius: 5px;
+  background-color: #666;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 滑块样式定义 */
+.scroll_full::-webkit-scrollBar-track {
+  border-radius: 5px;
+  background: #EDEDED;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */

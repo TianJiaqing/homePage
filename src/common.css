@@ -1,0 +1,24 @@
+.d_f {
+    display: flex;
+}
+
+.j_c {
+    justify-content: center;
+}
+
+.a_i {
+    align-items: center;
+
+}
+
+.j_b {
+    justify-content: space-between;
+}
+
+.j_e {
+    justify-content: space-evenly;
+}
+
+.c_p {
+    cursor: pointer;
+}
