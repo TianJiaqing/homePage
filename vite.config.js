@@ -8,7 +8,7 @@ export default defineConfig({
       "@": resolve(__dirname, "./src"),
       "@pages": resolve(__dirname, "./src/pages"),
       "@utils": resolve(__dirname, "./src/utils"),
-
+      "_hook": resolve(__dirname, "./src/utils/hook"),
     }
   },
   server: {

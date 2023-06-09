@@ -22,9 +22,11 @@ const set_waiting_style = (waiting_dom, target = {}) => {
 }
 //清除waiting元素的样式，让其继续保持隐藏
 const clear_waiting_style = (waiting_dom) => {
-    waiting_dom.setAttribute('style', `
-    visibility:hidden;
-    `)
+    if (waiting_dom) {
+        waiting_dom.setAttribute('style', `
+        visibility:hidden;
+        `)
+    }
 }
 // 自定义等待loading   v-waiting指令
 const waiting = (Vue) => {

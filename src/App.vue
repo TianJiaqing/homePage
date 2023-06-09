@@ -3,7 +3,7 @@
 	<div class="contain" v-waiting="loading">
 		<waiting />
 		<div class="d_f j_b">
-			<navigationBarPc v-if="isPc"  />
+			<navigationBarPc v-if="isPc" />
 			<div class="right scroll_full">
 				<router-view></router-view>
 			</div>
@@ -20,12 +20,8 @@
 	if (width < 500) {
 		isPc.value = false;
 	}
-	onMounted(() => {
-		setTimeout(() => {
-			loading.value = false;
-		}, 2000);
-	});
-	const loading = ref(true);
+	onMounted(() => {});
+	const loading = ref(false);
 </script>
 
 <style scoped lang='less'>

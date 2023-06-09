@@ -1,45 +1,58 @@
 
 <template>
 	<!-- 顶部导航栏 -->
-	<div class="navigation_bar_pc" @click="scaleBar">
-		<ul>
-			<li v-for="({ title, icon }, index) in list" :key="index">
+	<div class="navigation_bar_pc" @click="scaleBarFn">
+		<ul @click.stop="routerPushFn">
+			<li v-for="({ title, icon, path }, index) in list" :key="index">
 				<span :class="icon" class="iconfont"></span>
-				<span class="icon_text">{{ title }}</span>
+				<span class="icon_text" :data-path="path">{{ title }}</span>
 			</li>
 		</ul>
 	</div>
 </template>
 <script setup>
-	let num = 1;
-	const scaleBar = () => {
-		num++;
+	import r from "_hook/router.js";
+	const { route, router, routerPush } = r();
+	// click_times统计点击的次数，根据值来设置css变量
+	let click_times = 1;
+	const scaleBarFn = () => {
+		click_times++;
 		const root = document.querySelector(".navigation_bar_pc");
-		if (num % 2 == 0) {
+		if (click_times % 2 == 0) {
 			root.setAttribute("style", "--width:70px;--vis:none;");
 		} else {
 			root.setAttribute("style", "--width:150px;--vis:inline;");
 		}
 	};
-
+	const routerPushFn = (e) => {
+		const path = e.target.dataset.path;
+		if (!path) {
+			return;
+		}
+		routerPush({ path });
+	};
 	const list = [
 		{
 			title: "一个首页",
 			icon: "icon-iconhuaban1-15",
+			path: "/",
 		},
 		{
 			title: "科技感",
 			icon: "icon-keji",
+			path: "/technology_code",
 		},
 		{
 			title: "qiuzhi",
 			icon: "icon-jianli",
+			path: "/biographical_notes",
 		},
 		{
 			title: "BOLG",
 			icon: "icon-boke1",
 		},
 	];
+	Object.freeze(list);
 </script>
 
 <style scoped lang="less">
@@ -58,9 +71,9 @@
 		height: 100vh;
 		.icon_text {
 			display: var(--vis);
+			cursor: pointer;
 		}
 		ul {
-			cursor: pointer;
 			// background-color: #19CAAD;
 			// 25 202 173
 
@@ -69,8 +82,8 @@
 				white-space: nowrap;
 				padding: 15px;
 				color: #000;
-				&:hover {
-					color: #000000;
+				.icon_text:hover {
+					// color: #000000;
 					text-decoration: underline;
 				}
 				span {
