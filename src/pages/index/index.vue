@@ -1,10 +1,7 @@
 
 <template>
 	<div class="home_page">
-		<banner />
-		<div class="img_div">
-			<!-- <hexagon url="src/assets/images/3.png" /> -->
-		</div>
+		<banner v-if="false" />
 		<textContontent />
 	</div>
 </template>

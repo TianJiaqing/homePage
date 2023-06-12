@@ -47,4 +47,75 @@ button {
 
 
 
-/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+/* 路由跳转动画 */
+.vue_router {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  /* animation: router_opacity 1s linear forwards; */
+
+  /* background-color: #000; */
+}
+
+.vue_router_list {
+  flex-grow: 1;
+  background: url('@/assets/images/loading.png') no-repeat;
+  /* background-color: #000; */
+  background-size: 500% 100%;
+
+}
+
+.vue_router_list:nth-child(odd) {
+  /* animation: router_top .8s linear forwards; */
+
+}
+
+.vue_router_list:nth-child(even) {
+  /* animation: router_bottom .8s linear forwards; */
+}
+
+@keyframes router_top {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes router_bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes router_opacity {
+  0% {
+    opacity: 1;
+    width: 100%;
+  }
+
+  80% {
+    opacity: 1;
+    width: 100%;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0%;
+  }
+}

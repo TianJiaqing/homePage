@@ -5,7 +5,11 @@
 		<div class="d_f j_b">
 			<navigationBarPc v-if="isPc" />
 			<div class="right scroll_full">
-				<router-view></router-view>
+				<router-view v-slot="{ Component }">
+					<transition name="fade">
+						<component :is="Component" />
+					</transition>
+				</router-view>
 			</div>
 		</div>
 	</div>
@@ -32,6 +36,29 @@
 			flex-grow: 1;
 			height: 100vh;
 			overflow-y: auto;
+			overflow-x: hidden;
 		}
+	}
+
+	/* 路由切换动画 */
+	/* fade-transform */
+	.fade-leave-active,
+	.fade-enter-active {
+		transition: all 0.5s;
+	}
+
+	/* 可能为enter失效，拆分为 enter-from和enter-to */
+	.fade-enter-from {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	.fade-enter-to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+
+	.fade-leave-to {
+		opacity: 0;
+		transform: translateY(30px);
 	}
 </style>
