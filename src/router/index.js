@@ -25,10 +25,12 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    // router_animate().then(res => {
-    //     next()
-    // })
-    next()
+    //路由动画效果
+    router_animate().then(res => {
+        next()
+    })
+    //摒弃路由跳转动画，直接next()
+    // next()
 
 })
 

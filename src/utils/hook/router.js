@@ -7,6 +7,6 @@ export default function () {
     return {
         route,
         router,
-        routerPush:router.push
+        routerPush: router.push
     }
 }

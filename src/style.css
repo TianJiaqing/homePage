@@ -56,7 +56,7 @@ button {
   height: 100vh;
   z-index: 999;
   display: flex;
-  /* animation: router_opacity 1s linear forwards; */
+  animation: router_opacity 1s ease-in-out forwards;
 
   /* background-color: #000; */
 }
@@ -65,17 +65,17 @@ button {
   flex-grow: 1;
   background: url('@/assets/images/loading.png') no-repeat;
   /* background-color: #000; */
-  background-size: 500% 100%;
+  background-size: 100vw auto;
 
 }
 
 .vue_router_list:nth-child(odd) {
-  /* animation: router_top .8s linear forwards; */
+  animation: router_top .5s ease-in-out forwards;
 
 }
 
 .vue_router_list:nth-child(even) {
-  /* animation: router_bottom .8s linear forwards; */
+  animation: router_bottom .5s ease-in-out forwards;
 }
 
 @keyframes router_top {
