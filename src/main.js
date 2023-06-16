@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
-import './style.css'
-import './iconfont.css'
-import './common.css'
+import './style/style.css'
+import './style/iconfont.css'
+import './style/common.css'
+import './font_family/font_family.css'
+
 import App from './App.vue'
 import { router } from './router/index'
 

@@ -1,0 +1,12 @@
+/* 自定义字体 */
+@font-face {
+    font-family: RR;
+    src: url('./Reey-Regular.otf');
+    font-size: 40px;
+}
+
+@font-face {
+    font-family: YZCCQSXK;
+    src: url('./YeZiGongChangChuanQiuShaXingKai/YeZiGongChangChuanQiuShaXingKai-2.ttf');
+    font-size: 40px;
+}

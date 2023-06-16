@@ -13,7 +13,15 @@ export default defineConfig({
   },
   server: {
     host: true,
-    open: true
+    open: true,
+    proxy: {
+      // with options
+      '/api': {
+        target: 'https://www.baidu.com',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '')
+      }
+    }
   },
   css: {
     preprocessorOptions: {

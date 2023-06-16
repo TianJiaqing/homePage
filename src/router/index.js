@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import index from "@pages/index/index.vue"
 import technology_code from "@pages/technology_code/index.vue"
 import biographical_notes from "@pages/biographical_notes/index.vue"
+import bookmark from "@pages/bookmark/index.vue"
 import router_animate from './router_animate.js'
 
 
@@ -17,6 +18,9 @@ const routes = [
     {
         path: '/biographical_notes',
         component: biographical_notes,
+    }, {
+        path: '/bookmark',
+        component: bookmark
     }
 ]
 const router = createRouter({

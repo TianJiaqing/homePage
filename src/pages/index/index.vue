@@ -1,24 +1,28 @@
 
 <template>
 	<div class="home_page">
-		<banner v-if="false" />
-		<textContontent />
+		<banner v-if="show" />
+		<textContontent v-if="show" />
+		<!-- <div style="height: 800px"></div> -->
+		<!-- <introduce /> -->
 	</div>
 </template>
 <script setup>
+	import { ref, onMounted } from "vue";
 	import hexagon from "@/components/card/hexagon.vue";
 	import banner from "./components/banner.vue";
 	import textContontent from "./components/textContontent.vue";
+	import introduce from "./components/introduce.vue";
+	const show = ref(true);
 </script>
 
 <style scoped  lang="less">
 	.home_page {
-       
 		.img_div {
 			height: 350px;
 			display: flex;
 			align-items: center;
-            // background-color: #BDB5AA;
+			// background-color: #BDB5AA;
 			justify-content: center;
 		}
 	}

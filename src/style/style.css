@@ -53,7 +53,7 @@ button {
   top: 0;
   right: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 999;
   display: flex;
   animation: router_opacity 1s ease-in-out forwards;
@@ -129,3 +129,25 @@ button {
     width: 0px;
   }
 }
+
+
+.top_left_app {
+  transform-origin: top left;
+  transition: transform 1s;
+  transform: scale(.5);
+}
+
+.bottom_right_iframe {
+  width: 160vw;
+  height: 200vh;
+  transform-origin: bottom right;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: scale(.5);
+}
+
+/* #app {
+  position: relative;
+} */

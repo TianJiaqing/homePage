@@ -10,45 +10,42 @@
 			<p class="title">_咸鱼前端</p>
 			<p class="poem">故不积跬步，无以至千里。</p>
 		</div>
-		<div class="to_bottom"><span class="iconfont icon-xia"></span></div>
-		<p class="typewriting">
-			<span class="typewriting_text" ref="typewriting_text"></span>
-		</p>
+		<div class="to_bottom">
+			<div class="to_bottom_contain" @click="to_bottom">
+				<span class="iconfont icon-xia"></span>
+			</div>
+		</div>
 	</div>
 </template>
 <script setup>
 	import { ref, onMounted } from "vue";
-	const text = "该怎么去形容你最贴切？";
-	const typewriting_text = ref(null);
+	//滚动速度
+	const speed = 50;
+	//per_canvas 控制波浪纹占比，当前占70%
+	const per_canvas = 0.7;
 	let font_length = 0;
 	onMounted(() => {
-		const dom = typewriting_text.value;
-		const set_font = setInterval(() => {
-			// console.log(dom.innerTex);
-			if (font_length < text.length) {
-				dom.innerText = dom.innerText + text[font_length];
-				font_length++;
-			} else {
-				clearInterval(set_font);
-			}
-		}, 800);
-
 		const canvas = document.getElementById("canvas");
 		const ctx = canvas.getContext("2d");
 		canvas.width = document.querySelector(".banner").offsetWidth;
 		canvas.height = document.querySelector(".banner").offsetHeight;
-		const height_top = canvas.height / 0.7;
-
+		const height_top = canvas.height / per_canvas;
+		//step 随时间变化，不断增加，控制曲线变化幅度的主要变量
 		let step = 0;
-
 		loop(ctx, canvas, height_top, step);
 	});
+	//绘制波浪纹
+	/**
+	 * ctx 画笔
+	 * canvas 画布
+	 * height_top 画布高度
+	 * step  变化幅度
+	 */
 	const loop = (ctx, canvas, height_top, step) => {
 		canvas.width = document.querySelector(".banner").offsetWidth;
-
 		//清空canvas
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		step += 2;
+		step += 1;
 		for (let i = 1; i < 4; i++) {
 			ctx.fillStyle = `rgba(255,255,255,.${i * 3})`;
 			const angle = ((step + (i * 360) / 3) * Math.PI) / 180;
@@ -74,6 +71,31 @@
 			loop(ctx, canvas, height_top, step);
 		});
 	};
+	// 点击按钮滚动至下一个元素展示位置
+	const to_bottom = () => {
+		const dom = document.querySelector(".body_scroll_full");
+		const client_dom = dom.getBoundingClientRect();
+		const { top, bottom } = client_dom;
+		scroll_animate(dom, speed, bottom, bottom);
+	};
+	/**
+	 * el 滚动元素
+	 * speed 滚动速度
+	 * height 剩余滚动高度
+	 * current_height 当前总需滚动高度
+	 */
+	const scroll_animate = (el, speed, height, current_height) => {
+		console.log('确定');
+		if (height <= 0) {
+			el.scrollTop = current_height;
+			return;
+		}
+		el.scrollTop += speed;
+		height -= speed;
+		requestAnimationFrame(() =>
+			scroll_animate(el, speed, height, current_height)
+		);
+	};
 </script>
 
 <style scoped lang="less">
@@ -84,16 +106,6 @@
 		background-color: #3a4189;
 		// background: url("@/assets/images/background3.webp");
 		// background-size:100%  auto ;
-		.typewriting {
-			&::after {
-				content: "Ⅰ";
-				font-size: 18px;
-				display: inline-block;
-				vertical-align: top;
-				font-weight: lighter;
-				animation: flicker 0.6s infinite;
-			}
-		}
 		.text_contain {
 			position: absolute;
 			flex-direction: column;
@@ -113,7 +125,8 @@
 			color: white;
 
 			.poem {
-				font-size: 16px;
+				font-size: 20px;
+				font-family: YZCCQSXK;
 			}
 			.title {
 				font-size: 25px;
@@ -129,6 +142,10 @@
 			animation: to_bttom 0.8s infinite ease-in-out alternate-reverse;
 			width: 100%;
 			text-align: center;
+			.to_bottom_contain {
+				padding: 10px;
+				display: inline-block;
+			}
 			.iconfont {
 				font-size: 20px;
 				cursor: pointer;

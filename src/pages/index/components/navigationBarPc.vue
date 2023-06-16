@@ -48,6 +48,11 @@
 			path: "/biographical_notes",
 		},
 		{
+			title: "网页书签",
+			icon: "icon-shuqian",
+			path: "/bookmark",
+		},
+		{
 			title: "BOLG",
 			icon: "icon-boke1",
 		},
@@ -68,7 +73,7 @@
 		// );
 		background-color: #fff;
 		transition: width 0.5s ease-in-out;
-		height: 100vh;
+		height: 100%;
 		.icon_text {
 			display: var(--vis);
 			cursor: pointer;
