@@ -130,6 +130,7 @@ button {
   }
 }
 
+/* 页面容器左上角缩小功能 */
 
 .top_left_app {
   transform-origin: top left;
@@ -151,3 +152,10 @@ button {
 /* #app {
   position: relative;
 } */
+
+
+.text_overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

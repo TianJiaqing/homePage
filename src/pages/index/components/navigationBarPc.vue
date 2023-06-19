@@ -55,6 +55,8 @@
 		{
 			title: "BOLG",
 			icon: "icon-boke1",
+			path: "/bolg",
+
 		},
 	];
 	Object.freeze(list);
@@ -64,7 +66,7 @@
 	.navigation_bar_pc {
 		--width: 150px;
 		--vis: inline;
-
+		height: 100vh;
 		width: var(--width);
 		// background: linear-gradient(
 		// 	rgba(25, 202, 173, 0.6),
@@ -73,7 +75,6 @@
 		// );
 		background-color: #fff;
 		transition: width 0.5s ease-in-out;
-		height: 100%;
 		.icon_text {
 			display: var(--vis);
 			cursor: pointer;

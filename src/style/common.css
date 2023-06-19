@@ -28,3 +28,11 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+.p_r {
+    position: relative;
+}
+
+.p_a {
+    position: absolute;
+}
