@@ -48,15 +48,14 @@
 			path: "/biographical_notes",
 		},
 		{
-			title: "网页书签",
-			icon: "icon-shuqian",
-			path: "/bookmark",
-		},
-		{
 			title: "BOLG",
 			icon: "icon-boke1",
 			path: "/bolg",
-
+		},
+		{
+			title: "网页书签",
+			icon: "icon-shuqian",
+			path: "/bookmark",
 		},
 	];
 	Object.freeze(list);

@@ -7,8 +7,13 @@ import technology_code from "@pages/technology_code/index.vue";
 import biographical_notes from "@pages/biographical_notes/index.vue";
 import bookmark from "@pages/bookmark/index.vue";
 import bolg from "@pages/bolg/index.vue";
+import bolg_detail from "@pages/bolg/components/bolg.vue";
 
 import router_animate from "./router_animate.js";
+
+//忽略路由跳转动画
+//数组元素为路由路径
+const ignore_router_animate_arr = ['/bolg_detail']
 
 const routes = [{
     path: "/",
@@ -30,26 +35,27 @@ const routes = [{
     path: "/bolg",
     component: bolg,
 },
+{
+    path: "/bolg_detail",
+    component: bolg_detail,
+}
 ];
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    scrollBehavior(to, from, savedPosition) {
-        console.log('设置o');
-        return {
-            el:document.querySelector ('#body_scroll_full'),
-            top: 0,
-        }
-    }
 });
 
 router.beforeEach((to, from, next) => {
+    const { path } = to
+    if (ignore_router_animate_arr.includes(path)) {
+        //摒弃路由跳转动画，直接next()
+        next();
+        return
+    }
     //路由动画效果
     router_animate().then((res) => {
         next();
     });
-    //摒弃路由跳转动画，直接next()
-    // next()
 });
 
 export {

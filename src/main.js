@@ -7,9 +7,13 @@ import './font_family/font_family.css'
 import App from './App.vue'
 import { router } from './router/index'
 
-import { v_directive } from '@utils/vue_instruct'
-import vue_component from '@utils/vue_component'
-
+import { v_directive } from '@utils/vue_utils/vue_instruct'
+import vue_component from '@utils/vue_utils/vue_component'
+let isPc = true;
+const width = document.scrollingElement.scrollWidth;
+if (width < 500) {
+    isPc = false;
+}
 //ES6的at方法，被这个坑了好几次了，不知道什么原因浏览器都没有这个方法！！
 if (!Array.prototype.at) {
     Array.prototype.at = function (index) {

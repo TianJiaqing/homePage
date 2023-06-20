@@ -1,17 +1,17 @@
 
 <template>
 	<div class="img_card" ref="img_card">
-		<div class="img_div" :class="{ load_img: !imgFlg }">
-			<img src="1111" alt="" ref="img"  loading="lazy"/>
+		<div class="img_div" :class="{ load_img: !imgFlg }" ref="img_div">
+			<img src="@/assets/images/2.jpg" alt="" ref="img" loading="lazy" />
 		</div>
 		<div class="title_div d_f j_c p_r">
 			<p class="title text_overflow">不是，到底有多少种图片懒加载啊</p>
 			<p class="detail">
-				不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊
+				不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊不是，到底有多少种图片懒加载啊！！
 			</p>
 			<div class="hover_div p_a d_f j_c a_i">
 				<div>
-					<T-button color="#000">查看</T-button>
+					<T-button color="#333" @click="to_detail">查看</T-button>
 				</div>
 			</div>
 		</div>
@@ -20,6 +20,9 @@
 <script setup>
 	import { onMounted, ref } from "vue";
 	import err_img from "@/assets/images/img_loading.gif";
+	import { dom_full_screen } from "@utils/dom_animate/dom_full_screen.js";
+	import r from "_hook/router.js";
+	const { routerPush } = r();
 	/**
 	 * params 图片信息 、文字信息
 	 * position 图片展示位置，right右边，left左边
@@ -37,6 +40,7 @@
 	});
 	const imgFlg = ref(false);
 	const img_card = ref(null);
+	const img_div = ref(null);
 	const img = ref(null);
 	const { position, params } = prop;
 	onMounted(() => {
@@ -56,6 +60,16 @@
 			dom.onload = null;
 		};
 	});
+	const to_detail = () => {
+		const dom = img_div.value;
+		const { top, left, bottom, right } = dom.getBoundingClientRect();
+		const width = dom.clientWidth;
+		const height = dom.clientHeight;
+		dom_full_screen(dom, { top, left, bottom, right, width, height });
+		routerPush({
+			path: "/bolg_detail",
+		});
+	};
 </script>
 
 <style scoped lang="less">
@@ -76,9 +90,9 @@
 			}
 		}
 		.load_img {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 		.title_div {
 			width: 500px;

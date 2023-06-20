@@ -159,3 +159,21 @@ button {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+
+
+
+
+/* dom_full_screen.js文件 css动画 */
+.create_dom_full_screen {}
+
+
+.create_dom_full_screen .dom_full_screen {
+  transition: all .5s linear;
+  left: 0 !important;
+  top: 0 !important;
+  width: 30vw !important;
+  /* max-width: ; */
+  height: 90vh !important;
+  margin: 15px 0;
+}
