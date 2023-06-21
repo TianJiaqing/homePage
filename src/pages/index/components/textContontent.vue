@@ -3,10 +3,10 @@
 	<!-- 首页主体之一：文本 -->
 	<div class="text_contontent">
 		<div class="left_div">
+			<img src="@/assets/images/2.jpg" alt="" />
 		</div>
 		<div class="right_div">
-			<div class="top_div">
-			</div>
+			<div class="top_div"></div>
 			<div class="bottom_div"></div>
 		</div>
 	</div>
@@ -37,6 +37,15 @@
 			height: 100%;
 			margin-right: 20px;
 			background-color: #000;
+			img {
+				// filter: blur(2px);
+				// transform: all 1s linear;
+			}
+			&:hover {
+				img {
+					// filter: blur(0px);
+				}
+			}
 		}
 		.right_div {
 			width: 250px;
@@ -44,8 +53,7 @@
 			.top_div {
 				overflow: hidden;
 				height: 60%;
-			background-color: #000;
-
+				background-color: #000;
 			}
 			.bottom_div {
 				height: 40%;

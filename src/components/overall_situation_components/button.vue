@@ -12,11 +12,15 @@
 			type: String,
 			default: "blue",
 		},
+		padding: {
+			type: String,
+			default: "10px 35px",
+		},
 	});
 	const btn = ref(null);
 	onMounted(() => {
-		const { color } = prop;
-		btn.value.style = `--color:${color}`;
+		const { color, padding } = JSON.parse(JSON.stringify(prop));
+		btn.value.style = `--color:${color};--padding:${padding}`;
 	});
 </script>
 
@@ -24,10 +28,11 @@
 <style scoped lang="less">
 	.btn {
 		--color: blue;
+		--padding: "10px 35px";
 		border: none;
 		display: block;
 		position: relative;
-		padding: 10px 35px;
+		padding: var(--padding);
 		font-size: 18px;
 		background: white;
 		cursor: pointer;

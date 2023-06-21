@@ -6,7 +6,6 @@ let create_dom_full_screen = null
  * 某图片元素进行全屏放大
  * */
 const dom_full_screen = (el, params = { top: 0, left: 0 }, color = "#fff") => {
-    const { top, left, bottom, right, width, height } = params
     // const create_dom_full_screen = dom.querySelector(".create_dom_full_screen")
     const body = document.body
     //克隆目标节点，赋值css样式

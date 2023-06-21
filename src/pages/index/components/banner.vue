@@ -8,7 +8,10 @@
 				<img src="@/assets/images/3.jpg" alt="" />
 			</div>
 			<p class="title">_咸鱼前端</p>
-			<p class="poem">故不积跬步，无以至千里。</p>
+			<p class="poem">
+				<span>故不积跬步，</span>
+				<span>无以至千里。</span>
+			</p>
 		</div>
 		<div class="to_bottom">
 			<div class="to_bottom_contain" @click="to_bottom">
@@ -127,6 +130,11 @@
 			.poem {
 				font-size: 20px;
 				font-family: YZCCQSXK;
+				display: flex;
+				flex-wrap:no-wrap;
+				span{
+					white-space: nowrap;
+				}
 			}
 			.title {
 				font-size: 25px;

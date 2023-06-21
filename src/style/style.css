@@ -177,3 +177,22 @@ button {
   height: 90vh !important;
   margin: 15px 0;
 }
+
+
+.web_iframe {
+  width: 200%;
+  height: 200vh;
+  transform: scale(.4);
+  transform-origin: right, center;
+  position: fixed;
+  top: -40%;
+  left: -40%;
+
+}
+
+.web_iframe::after {
+  content: "11111";
+  position: absolute;
+  top: 10px;
+  left: 0;
+}

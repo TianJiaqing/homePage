@@ -1,19 +1,50 @@
 
 <template>
 	<div class="card_contain d_f">
-		<div class="title">某某标签题目一</div>
+		<div class="text_contain d_f">
+			<p class="title">{{ resData.title }}</p>
+			<p class="detail d_f a_i j_c">{{ resData.detail }}</p>
+		</div>
 		<div class="target">
-			<div class="target_before">标签正面内容</div>
+			<div class="target_after target_before">
+				<img src="@/assets/images/2.jpg" alt="" />
+			</div>
 			<div class="target_after d_f j_c a_i">
-				<p @click="go_to">https:www.baidu.com</p>
+				<p>{{ resData.url }}</p>
+				<div class="btn_group d_f a_i">
+					<div><T-button padding="2px" color="red" @click="go_look">预览</T-button></div>
+					<div><f-button padding="2px" @click="go_to">跳转</f-button></div>
+				</div>
 			</div>
 		</div>
+		<!-- <iframe src="" frameborder="0"></iframe> -->
 	</div>
 </template>
 <script setup>
+import fButton from '@/components/overall_situation_components/button.vue'
+	const resData = {
+		title: "百度一下，你就知道",
+		detail:
+			"全球最大的中文搜索引擎、致力于让网民更便捷地获取信息,找到所求。百度超过千亿的中文网页数据库,可以瞬间找到相关的搜索结果。",
+		url: "https://www.baidu.com",
+	};
 	const go_to = () => {
-		// const app = document.querySelector("#app");
-		// app.classList.add("top_left_app");
+		window.open("https://www.baidu.com");
+	};
+	const go_look = () => {
+		const web_iframe = document.querySelector(".web_iframe");
+		let iframe = null;
+
+		if (web_iframe) {
+			iframe.src = "/api";
+		} else {
+			const app = document.querySelector("#app");
+			app.classList.add("top_left_app");
+			iframe = document.createElement("iframe");
+			document.body.appendChild(iframe);
+			iframe.src = "/api";
+			iframe.classList.add("web_iframe");
+		}
 	};
 </script>
 
@@ -22,9 +53,34 @@
 	.card_contain {
 		width: 200px;
 		height: 400px;
-		border: 1px solid;
 		flex-direction: column;
 		cursor: pointer;
+		.title {
+			text-align: center;
+			background-color: #000;
+			color: #fff;
+			line-height: 40px;
+		}
+		.text_contain {
+			flex-direction: column;
+		}
+		.detail {
+			padding: 0 10px;
+			flex-grow: 0;
+			line-height: 30px;
+			font-size: 12px;
+			height: 120px;
+			text-indent: 2em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			/* 将对象作为弹性伸缩盒子模型显示 */
+			display: -webkit-box;
+			/* 限制在一个块元素显示的文本的行数 */
+			/* -webkit-line-clamp 其实是一个不规范属性，使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；*/
+			-webkit-line-clamp: 4;
+			/* 设置或检索伸缩盒对象的子元素的排列方式 */
+			-webkit-box-orient: vertical;
+		}
 		> div {
 			height: 50%;
 			border: 1px solid;
@@ -45,8 +101,10 @@
 				bottom: 0;
 			}
 			.target_after {
-				font-family: RR;
+				// font-family: RR;
 				text-align: center;
+				display: flex;
+				flex-direction: column;
 				transform: translateZ(-20px) rotateY(-180deg);
 				p:hover {
 					color: rgba(0, 0, 255, 0.8);
@@ -55,6 +113,18 @@
 			}
 			.target_before {
 				transform: translateZ(20px);
+				overflow: hidden;
+				img {
+					width: 100%;
+				}
+			}
+		}
+		.btn_group {
+			width: 100%;
+			padding: 20px 0;
+			justify-content: space-evenly;
+			div {
+				width: 80px;
 			}
 		}
 	}
