@@ -3,6 +3,7 @@
 	<div class="home_page">
 		<banner v-if="show" />
 		<textContontent v-if="show" />
+		<imgageContontent />
 		<!-- <div style="height: 800px"></div> -->
 		<!-- <introduce /> -->
 	</div>
@@ -11,6 +12,7 @@
 	import { ref, onMounted } from "vue";
 	import hexagon from "@/components/card/hexagon.vue";
 	import banner from "./components/banner.vue";
+	import imgageContontent from "./components/imgageContontent.vue";
 	import textContontent from "./components/textContontent.vue";
 	import introduce from "./components/introduce.vue";
 	const show = ref(true);

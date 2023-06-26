@@ -6,7 +6,11 @@
 			<img src="@/assets/images/2.jpg" alt="" />
 		</div>
 		<div class="right_div">
-			<div class="top_div"></div>
+			<div class="top_div d_f j_c a_i">
+				<p>今日你所在的城市:南京</p>
+				<p>气温：26℃</p>
+				<p>天气：晴</p>
+			</div>
 			<div class="bottom_div"></div>
 		</div>
 	</div>
@@ -18,6 +22,7 @@
 <style scoped  lang='less'>
 	.text_contontent {
 		background-color: #444a5b;
+		// background: url("@/assets/images/4.jpg");
 		height: 400px;
 		display: flex;
 		align-items: center;
@@ -54,6 +59,11 @@
 				overflow: hidden;
 				height: 60%;
 				background-color: #000;
+				color: #fff;
+				flex-direction: column;
+				p {
+					line-height: 30px;
+				}
 			}
 			.bottom_div {
 				height: 40%;

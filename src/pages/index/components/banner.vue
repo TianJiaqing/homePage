@@ -88,7 +88,6 @@
 	 * current_height 当前总需滚动高度
 	 */
 	const scroll_animate = (el, speed, height, current_height) => {
-		console.log('确定');
 		if (height <= 0) {
 			el.scrollTop = current_height;
 			return;
@@ -131,8 +130,8 @@
 				font-size: 20px;
 				font-family: YZCCQSXK;
 				display: flex;
-				flex-wrap:no-wrap;
-				span{
+				flex-wrap: no-wrap;
+				span {
 					white-space: nowrap;
 				}
 			}

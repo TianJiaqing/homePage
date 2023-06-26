@@ -12,8 +12,10 @@
 			<div class="target_after d_f j_c a_i">
 				<p>{{ resData.url }}</p>
 				<div class="btn_group d_f a_i">
-					<div><T-button padding="2px" color="red" @click="go_look">预览</T-button></div>
-					<div><f-button padding="2px" @click="go_to">跳转</f-button></div>
+					<div>
+						<T-button padding="2px" color="red" @click="go_look">预览</T-button>
+					</div>
+					<div><T-button padding="2px" @click="go_to">跳转</T-button></div>
 				</div>
 			</div>
 		</div>
@@ -21,7 +23,9 @@
 	</div>
 </template>
 <script setup>
-import fButton from '@/components/overall_situation_components/button.vue'
+	import { render, h } from "vue";
+	// const d = h("div", {}, "render渲染的文本");
+
 	const resData = {
 		title: "百度一下，你就知道",
 		detail:
@@ -32,9 +36,10 @@ import fButton from '@/components/overall_situation_components/button.vue'
 		window.open("https://www.baidu.com");
 	};
 	const go_look = () => {
+		// render(d, document.body);
+		return;
 		const web_iframe = document.querySelector(".web_iframe");
 		let iframe = null;
-
 		if (web_iframe) {
 			iframe.src = "/api";
 		} else {
