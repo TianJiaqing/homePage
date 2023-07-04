@@ -44,7 +44,7 @@
 	 * height_top 画布高度
 	 * step  变化幅度
 	 */
-	const loop = (ctx, canvas, height_top, step) => {
+	let loop = (ctx, canvas, height_top, step) => {
 		canvas.width = document.querySelector(".banner").offsetWidth;
 		//清空canvas
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -71,7 +71,10 @@
 			ctx.fill();
 		}
 		requestAnimationFrame(function () {
-			loop(ctx, canvas, height_top, step);
+			// 偷懒,组件销毁时执行报错
+			try {
+				loop(ctx, canvas, height_top, step);
+			} catch (error) {}
 		});
 	};
 	// 点击按钮滚动至下一个元素展示位置

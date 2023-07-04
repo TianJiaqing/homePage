@@ -88,7 +88,6 @@
 				padding: 15px;
 				color: #000;
 				.icon_text:hover {
-					// color: #000000;
 					text-decoration: underline;
 				}
 				span {
