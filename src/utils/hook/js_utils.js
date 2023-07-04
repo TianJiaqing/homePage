@@ -1,11 +1,6 @@
 
 class _ {
-    /**
-     * @abstract 田家庆
-     * @param {function} callback 
-     * @param {number} throttle_interval 
-     */
-    constructor(callback, throttle_interval) {
+    constructor(callback = () => { }, throttle_interval = 500) {
         this.callback = callback
         this.throttle_time = new Date();
         this.throttle_interval = throttle_interval
