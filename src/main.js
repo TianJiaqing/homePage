@@ -16,11 +16,20 @@ if (width < 500) {
 }
 //ES6的at方法，被这个坑了好几次了，不知道什么原因浏览器都没有这个方法！！
 if (!Array.prototype.at) {
-    Array.prototype.at = function (index) {
+    Array.prototype.at = (index = []) => {
         if (index >= 0) { return this[index] }
         else {
             return this[this.length + index]
         };
+    }
+}
+if (!Math.toPercent) {
+    Math.toPercent = (index = 0) => {
+        if (typeof (index) == 'number') {
+            return index * 100 + '%'
+        } else {
+            console.error("抱歉，这不是一个Number类型的参数")
+        }
     }
 }
 const app = createApp(App)
