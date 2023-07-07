@@ -6,7 +6,7 @@
 			<navigationBarPc v-if="isPc" />
 			<div class="right scroll_full body_scroll_full" id="body_scroll_full">
 				<router-view v-slot="{ Component }">
-					<transition name="fade">
+					<!-- <transition name="fade"> -->
 						<component :is="Component" />
 					</transition>
 				</router-view>
@@ -18,7 +18,10 @@
 	import navigationBarPc from "@pages/index/components/navigationBarPc.vue";
 	import navigationBarMob from "@pages/index/components/navigationBarMob.vue";
 	import waiting from "@/components/card/waiting.vue";
+	// import useAxios from '@utils/axios/index.js'
 	import { onMounted, ref } from "vue";
+	// const axiosUtil = useAxios()
+	// console.log('axiosGet++.',axiosUtil.axiosGet.value);
 	const isPc = ref(true);
 	const width = document.scrollingElement.scrollWidth;
 	if (width < 500) {

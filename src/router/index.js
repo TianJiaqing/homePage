@@ -4,6 +4,7 @@ import {
 } from "vue-router";
 import index from "@pages/index/index.vue";
 import technology_code from "@pages/technology_code/index.vue";
+import technology_detail from "@pages/technology_code/components/detail.vue";
 import biographical_notes from "@pages/biographical_notes/index.vue";
 import bookmark from "@pages/bookmark/index.vue";
 import bolg from "@pages/bolg/index.vue";
