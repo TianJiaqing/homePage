@@ -16,7 +16,7 @@ if (width < 500) {
 }
 //ES6的at方法，被这个坑了好几次了，不知道什么原因浏览器都没有这个方法！！
 if (!Array.prototype.at) {
-    Array.prototype.at = (index = []) => {
+    Array.prototype.at = function (index = 0) {
         if (index >= 0) { return this[index] }
         else {
             return this[this.length + index]

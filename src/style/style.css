@@ -169,7 +169,7 @@ button {
 
 
 .create_dom_full_screen .dom_full_screen {
-  transition: all .5s linear;
+  transition: all .5s ease-in-out;
   left: 0 !important;
   top: 0 !important;
   width: 30vw !important;

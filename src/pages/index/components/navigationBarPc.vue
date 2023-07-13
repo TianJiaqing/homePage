@@ -43,7 +43,7 @@
 			path: "/technology_code",
 		},
 		{
-			title: "qiuzhi",
+			title: "关于",
 			icon: "icon-jianli",
 			path: "/biographical_notes",
 		},

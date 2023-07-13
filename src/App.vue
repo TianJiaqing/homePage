@@ -2,8 +2,9 @@
 <template>
 	<div class="contain" v-waiting="loading">
 		<waiting />
-		<div class="d_f j_b">
+		<div class="d_f j_b main_contain">
 			<navigationBarPc v-if="isPc" />
+			<navigationBarMob v-else/>
 			<div class="right scroll_full body_scroll_full" id="body_scroll_full">
 				<router-view v-slot="{ Component }">
 					<!-- <transition name="fade"> -->
@@ -33,6 +34,8 @@
 
 <style scoped lang='less'>
 	.contain {
+		position: relative;
+		z-index: 2;
 		height: 100vh;
 		overflow: hidden;
 		.right {

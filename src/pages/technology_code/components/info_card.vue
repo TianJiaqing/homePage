@@ -2,9 +2,9 @@
 	<!-- 上方个人信息卡片 -->
 	<div class="info_card">
 		<div class="d_f a_i info_card_contain">
-			<p>咸鱼前端</p>
+			<p>_咸鱼前端</p>
 			<div class="div_img">
-				<img src="@/assets/images/2.jpg" alt="" />
+				<img src="@/assets/images/3.jpg" alt="" />
 			</div>
 		</div>
 		<p @click="goToPage">
