@@ -33,4 +33,4 @@ if (!Math.toPercent) {
     }
 }
 const app = createApp(App)
-app.use(router).use(v_directive).use(vue_component).mount('#app')
+app.use(vue_component).use(v_directive).use(router).mount('#app')

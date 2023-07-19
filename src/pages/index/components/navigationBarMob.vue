@@ -74,7 +74,7 @@
 		padding: 10px 0;
 		width: 100%;
 		max-width: 40px;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.1s ease-in-out;
 		overflow: hidden;
 		flex-shrink: 0;
 		position: fixed;
@@ -101,7 +101,7 @@
 			padding: 10px 0;
 		}
 		ul {
-			transition: all 0.3s ease-in-out;
+			transition: all 0.1s ease-in-out;
 			height: 0;
 			overflow: hidden;
 		}

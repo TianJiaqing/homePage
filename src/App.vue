@@ -4,11 +4,11 @@
 		<waiting />
 		<div class="d_f j_b main_contain">
 			<navigationBarPc v-if="isPc" />
-			<navigationBarMob v-else/>
+			<navigationBarMob v-else />
 			<div class="right scroll_full body_scroll_full" id="body_scroll_full">
 				<router-view v-slot="{ Component }">
 					<!-- <transition name="fade"> -->
-						<component :is="Component" />
+					<component :is="Component" />
 					<!-- </transition> -->
 				</router-view>
 			</div>

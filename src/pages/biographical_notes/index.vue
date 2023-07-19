@@ -20,6 +20,7 @@
 			</div>
 		</div>
 		<div class="info_avatar scroll_full">
+			<p class="title">《劝学》</p>
 			<p>君子曰:学不可以已。</p>
 			<p>
 				青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴，不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。
@@ -79,6 +80,7 @@
 		z-index: -1;
 	}
 	.biographical_notes {
+		max-width: 100%;
 		height: 100%;
 		position: relative;
 		z-index: 2;
@@ -92,7 +94,6 @@
 		overflow-x: hidden;
 
 		.info_avatar {
-			flex-grow: 1;
 			height: 100%;
 			overflow-y: auto;
 			overflow-x: hidden;
@@ -100,12 +101,27 @@
 			margin-bottom: 20px;
 			font-family: "KaiTi";
 			line-height: 30px;
-			font-weight: 900;
+			font-weight: 300;
 			padding: 0 5px;
 			> p {
 				text-indent: 2em;
 				span {
 					color: rgb(255, 0, 0);
+				}
+			}
+			.title {
+				text-align: center;
+				position: relative;
+				font-weight: 900;
+				&::after {
+					content: "‘故不积跬步，无以至千里。’来源";
+					zoom: 0.9;
+					font-size: 12px;
+					display: block;
+					position: absolute;
+					line-height: 12px;
+					top: 50%;
+					right: 0;
 				}
 			}
 		}
@@ -132,6 +148,7 @@
 				&:hover {
 					transform: translateZ(0px) rotateY(30deg) rotateX(-15deg);
 					font-family: "KaiTi";
+					box-shadow: 2px 0px 3px 4px rgba(0, 0, 0, 0.2);
 				}
 			}
 			.info_name {

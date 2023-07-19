@@ -7,7 +7,7 @@
 				<i class="month_span">{{ month }}</i>
 			</template>
 		</div>
-		<div class="main_contain">
+		<div class="main_contain" @click="$emit('view_details',detail.id)">
 			<div class="text_contain" v-if="props.msg_type == 1">
 				<p>
 					{{ detail.detail }}
@@ -21,7 +21,7 @@
 					<p class="text_p">
 						{{ props.detail.detail }}
 					</p>
-					<p class="img_length_p">共1张</p>
+					<p class="img_length_p">共{{detail.img_url.length}}张</p>
 				</div>
 			</div>
 		</div>
@@ -29,6 +29,7 @@
 </template>
 <script setup>
 	import { ref } from "vue";
+import img_url from '@/assets/images/2.jpg';
 	const props = defineProps({
 		msg_type: {
 			type: [Number, String],
@@ -47,9 +48,7 @@
 	const day = ref(null);
 	const month = ref(null);
 	const show_time = ref(detail.data);
-	console.log(detail);
 	if (detail.data) {
-		console.log(detail.data);
 		day.value = detail.data.slice(8);
 		month.value = detail.data.slice(5, 7) + "月";
 	}
