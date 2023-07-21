@@ -1,14 +1,11 @@
 let num = 0
 
 const setWebFull = e => {
-    console.log(e);
     const dom = document.createElement("div")
     dom.style = 'overflow:auto;height:100vh;color:white'
     const resizeObserver = new ResizeObserver(entries => {
         num++
         if (num >3) {
-
-            console.log(num);
             dom.innerHTML=num
             if (!document.webkitIsFullScreen) {
                 num = 0

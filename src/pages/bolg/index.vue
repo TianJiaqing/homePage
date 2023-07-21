@@ -20,11 +20,15 @@
 			</div>
 		</div>
 		<div>
-			<card
-				v-for="item in 15"
-				:position="item % 2 === 0 ? 'left' : 'right'"
-				:key="item"
-			/>
+			<transition-group name="card" tag="div" appear>
+				<card
+					v-for="(item, index) in 15"
+					class="card_div"
+					:style="{ '--index': index }"
+					:position="item % 2 === 0 ? 'left' : 'right'"
+					:key="item"
+				/>
+			</transition-group>
 		</div>
 	</div>
 </template>
@@ -90,6 +94,30 @@
 					}
 				}
 			}
+		}
+
+		/* fade-transform */
+		.card-leave-active,
+		.card-enter-active {
+			transition: all 1s;
+		}
+
+		/* 可能为enter失效，拆分为 enter-from和enter-to */
+		.card-enter-from {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+		.card-enter-to {
+			transform: translateX(0%);
+			opacity: 1;
+		}
+
+		.card-leave-to {
+			opacity: 0;
+			transform: translateX(100%);
+		}
+		.card_div {
+			transition-delay: calc(var(--index) * 0.4s);
 		}
 	}
 </style>

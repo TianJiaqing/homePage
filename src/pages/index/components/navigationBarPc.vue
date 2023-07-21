@@ -3,7 +3,11 @@
 	<!-- 顶部导航栏 -->
 	<div class="navigation_bar_pc" @click="scaleBarFn">
 		<ul @click.stop="routerPushFn">
-			<li v-for="({ title, icon, path }, index) in list" :key="index">
+			<li
+				v-for="({ title, icon, path }, index) in list"
+				:key="index"
+				:class="{ li_active: path_name == path }"
+			>
 				<span :class="icon" class="iconfont"></span>
 				<span class="icon_text" :data-path="path">{{ title }}</span>
 			</li>
@@ -12,7 +16,13 @@
 </template>
 <script setup>
 	import r from "_hook/router.js";
+	import { onMounted, ref } from "vue";
+	import _ from "_hook/path_name.js";
 	const { route, router, routerPush } = r();
+	const path_name = ref(null);
+	onMounted(() => {
+		path_name.value = window.location.pathname;
+	});
 	// click_times统计点击的次数，根据值来设置css变量
 	let click_times = 1;
 	const scaleBarFn = () => {
@@ -29,6 +39,7 @@
 		if (!path) {
 			return;
 		}
+		path_name.value = path;
 		routerPush({ path });
 	};
 	const list = [
@@ -93,6 +104,9 @@
 				span {
 					line-height: 20px;
 				}
+			}
+			.li_active {
+				text-decoration: underline;
 			}
 		}
 	}

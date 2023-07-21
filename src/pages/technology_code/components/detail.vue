@@ -2,7 +2,7 @@
 	<!-- 详细 -->
 	<div class="detail p_f t0_l0 d_f a_i j_c">
 		<div>
-			<div class="head_icon d_f j_b">
+			<div class="head_icon d_f j_b p_r">
 				<ul>
 					<li style="--color: #000"></li>
 					<li style="--color: #dd5145"></li>
@@ -60,7 +60,20 @@
 			background-color: #fff;
 			.head_icon {
 				height: 20px;
-				padding: 5px 15px;
+				padding: 20px 15px;
+				align-items: center;
+				//标题下方下划线
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					bottom: 10px;
+					width: 10%;
+					height: 2px;
+					left: 50%;
+					transform: translateX(-50%);
+					background-color: #666;
+				}
 				ul {
 					display: flex;
 				}

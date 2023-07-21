@@ -4,13 +4,17 @@
 		<div>
 			<pageHeader></pageHeader>
 			<infoCard></infoCard>
-			<msgCard
-				v-for="(item, index) in list"
-				:key="index"
-				:detail="item"
-				:msg_type="item.msg_type"
-				@view_details="view_details"
-			></msgCard>
+			<transition-group name="card" tag="ul" appear>
+				<msgCard
+					v-for="(item, index) in list"
+					:key="index"
+					:detail="item"
+					class="msgCard"
+					:style="{ '--index': index }"
+					:msg_type="item.msg_type"
+					@view_details="view_details"
+				></msgCard>
+			</transition-group>
 			<transition name="fade">
 				<infoDetail
 					v-if="show_detail"
@@ -113,7 +117,6 @@
 		}
 		background-color: #f1f1f1;
 	}
-	/* 路由切换动画 */
 	/* fade-transform */
 	.fade-leave-active,
 	.fade-enter-active {
@@ -133,5 +136,31 @@
 	.fade-leave-to {
 		opacity: 0;
 		transform: translateY(30px);
+	}
+
+	/* fade-transform */
+	.card-leave-active,
+	.card-enter-active {
+		transition: all 1s;
+	}
+
+	/* 可能为enter失效，拆分为 enter-from和enter-to */
+	.card-enter-from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	.card-enter-to {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+
+	.card-leave-to {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	.msgCard {
+		// 动画执行顺序
+		transition-delay: calc(var(--index) * 0.1s);
 	}
 </style>
