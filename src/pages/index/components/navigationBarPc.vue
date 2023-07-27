@@ -16,10 +16,12 @@
 </template>
 <script setup>
 	import r from "_hook/router.js";
+	import { layout_routes } from "@/router/index";
 	import { onMounted, ref } from "vue";
 	import _ from "_hook/path_name.js";
 	const { route, router, routerPush } = r();
 	const path_name = ref(null);
+	const subtitle = ref(null);
 	onMounted(() => {
 		path_name.value = window.location.pathname;
 	});
@@ -35,40 +37,25 @@
 		}
 	};
 	const routerPushFn = (e) => {
-		const path = e.target.dataset.path;
+		console.log(e);
+		const dataset = e.target.dataset;
+		const path = dataset.path;
+		subtitle.value = dataset.subtitle;
 		if (!path) {
 			return;
 		}
 		path_name.value = path;
 		routerPush({ path });
 	};
-	const list = [
-		{
-			title: "一个首页",
-			icon: "icon-iconhuaban1-15",
-			path: "/",
-		},
-		{
-			title: "科技感",
-			icon: "icon-keji",
-			path: "/technology_code",
-		},
-		{
-			title: "关于",
-			icon: "icon-jianli",
-			path: "/biographical_notes",
-		},
-		{
-			title: "BOLG",
-			icon: "icon-boke1",
-			path: "/bolg",
-		},
-		{
-			title: "网页书签",
-			icon: "icon-shuqian",
-			path: "/bookmark",
-		},
-	];
+	const list = layout_routes.map((item) => {
+		const { title, icon, subtitle } = item.meta;
+		return {
+			title,
+			path: item.path,
+			icon,
+			subtitle,
+		};
+	});
 	Object.freeze(list);
 </script>
 
@@ -91,8 +78,6 @@
 		}
 		ul {
 			// background-color: #19CAAD;
-			// 25 202 173
-
 			color: white;
 			li {
 				white-space: nowrap;

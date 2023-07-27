@@ -160,7 +160,10 @@ button {
   text-overflow: ellipsis;
 }
 
-
+.error_text{
+  text-decoration: line-through;
+  font-weight: 300;
+}
 
 
 

@@ -23,7 +23,7 @@
 <script setup>
 	import { ref, onMounted } from "vue";
 	//滚动速度
-	const speed = 50;
+	const speed = 80;
 	//per_canvas 控制波浪纹占比，当前占70%
 	const per_canvas = 0.7;
 	let font_length = 0;

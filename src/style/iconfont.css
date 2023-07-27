@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4101211 */
-  src: url('//at.alicdn.com/t/c/font_4101211_48yw3tiay6e.woff2?t=1689562018141') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4101211_48yw3tiay6e.woff?t=1689562018141') format('woff'),
-       url('//at.alicdn.com/t/c/font_4101211_48yw3tiay6e.ttf?t=1689562018141') format('truetype');
+  font-family: "iconfont";
+  /* Project id 4101211 */
+  src: url('//at.alicdn.com/t/c/font_4101211_zs4y0eu4u6s.woff2?t=1690442897479') format('woff2'),
+    url('//at.alicdn.com/t/c/font_4101211_zs4y0eu4u6s.woff?t=1690442897479') format('woff'),
+    url('//at.alicdn.com/t/c/font_4101211_zs4y0eu4u6s.ttf?t=1690442897479') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +12,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cunru:before {
+  content: "\e626";
+}
+
+.icon-quchu:before {
+  content: "\e627";
+}
+
+.icon-cunqianguan:before {
+  content: "\e666";
 }
 
 .icon-guanbi:before {
