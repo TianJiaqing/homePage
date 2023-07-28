@@ -9,7 +9,7 @@ import { defineAsyncComponent } from 'vue';
 const vue_component = (vue) => {
     // const modules = require.context('../../components/overall_situation_components', true, /\.vue$/)
     // const modules = import.meta.globEager('/src/component/overall_situation_components/**/*.vue');
-    const modules = import.meta.glob('../../components/overall_situation_components/**/*.vue')
+    const modules = import.meta.glob('@/components/overall_situation_components/**/*.vue')
     if (!Object.keys(modules).length) return;
     for (const path in modules) {
         const list = path.split("/")
