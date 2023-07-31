@@ -45,16 +45,18 @@
 				<li>
 					天上掉馅饼，入坑编程后，学的很快，也对此很感兴趣(没办法，天赋太高，老天爷赏饭)。
 				</li>
-				<li>天上掉馅饼，我找工作的时候都很幸运，几乎无波澜。</li>
+				<li>
+					天上掉馅饼，每次我找工作的时候都很幸运，几乎无波澜，顺风顺水的入职。
+				</li>
 				<li>很悲哀的是，尚未吃到互联网红利，就听到了互联网已死的消息。</li>
 				<li>很悲哀的是，我喜欢做每一件事情，但几乎都是半途而废。</li>
 				<li>
-					很悲哀的是，近段时间技术上感觉不到增长了(太懒了)，因此手写这个bolg系统的所有内容，鞭挞一下自己。
+					很悲哀的是，近段时间技术上感觉不到增长了(太懒了)，因此手写这个bolg系统的所有的BUG，鞭挞一下自己。
 				</li>
 				<li>
 					很悲哀的是，南京这边房价均价在3w一平，按照我的薪资来算，不吃不喝只需要30-40年就能拿下，良心！！
 				</li>
-				<li>很悲哀的是，我需要吃、喝、住，因此大概需要90年才能拿下。</li>
+				<li>很悲哀的是，我需要吃喝，因此大概需要90-100年才能拿下，良心！！</li>
 				<li>
 					很悲哀的是，至今还不清楚自己未来的定位，是主攻技术，成为it界的阮一峰，还是面向客户，还是说撑到35，便告别代码，黄袍加身，转战美团。
 				</li>
@@ -75,13 +77,54 @@
 				<li>运用的技术，三剑客、vue3、axios。</li>
 			</ul>
 		</div>
+		<div class="title_card">
+			<p class="title">
+				联系我、讨口饭<span class="contact_span" @click="change_show_dialog"
+					>联系方式</span
+				>
+			</p>
+			<ul>
+				<li class="introduce_ps">
+					1、如果您对您的项目的前景很有信心，可以联系我(免费出力)。
+				</li>
+				<li class="contact_ps">
+					2、如果您想聘用一个兼职选手或者您有一些项目资源，可以联系我。
+				</li>
+				<li>补充，周末与周六全天均空闲。</li>
+				<li>
+					3、如果您发现了该程序上的一个BUG，可以联系我，但我除了以身相许之外，就没有其它的回报方式了。
+				</li>
+				<li>4、如果上诉的语言影响了您的心情，请联系我，我尽量修改不适内容。</li>
+				<li>5、如果你想无理取闹的话，也请联系我，我把你拉黑。</li>
+			</ul>
+		</div>
 		<div class="img_div">
 			<img src="@/assets/images/5.jpg" alt="" />
 		</div>
+		<transition name="fade">
+			<T-dialog v-if="show_dialog">
+				<template #footer>
+					<div class="dialog_footer">
+						<button class="no_btn">不行</button>
+						<button @click="closeDialog(2)">准奏</button>
+					</div>
+				</template>
+			</T-dialog>
+		</transition>
 		<div style="height: 200px"></div>
 	</div>
 </template>
 <script setup>
+	import { ref } from "vue";
+	const show_dialog = ref(false);
+	const change_show_dialog = () => {
+		show_dialog.value = true;
+	};
+	const closeDialog = (val) => {
+		if (val == 2) {
+			show_dialog.value = false;
+		}
+	};
 </script>
 <style lang="less" scoped>
 	.biographical_notes {
@@ -109,6 +152,12 @@
 			font-family: KaiTi;
 			padding: 20px 0;
 			padding-bottom: 5px;
+			.contact_span {
+				font-size: 20px;
+				text-decoration: underline;
+				color: rgb(69, 69, 187);
+				cursor: pointer;
+			}
 			> .title {
 				margin: 10px 0;
 				line-height: 40px;
@@ -139,6 +188,30 @@
 			img {
 				width: 100%;
 			}
+		}
+		.introduce_ps::after {
+			content: "ps：(唯一需要，花费您的一小段时间来介绍咱们的项目，我会认真思考项目的前景，中国人不骗中国人。)";
+			color: #ff0000;
+			font-size: 12px;
+			margin-left: 15px;
+		}
+		// .contact_ps::after {
+		// 	content: "ps：(价格能抵消掉我的租房费用就可以了。)";
+		// 	color: #ff0000;
+		// 	font-size: 12px;
+		// 	margin-left: 15px;
+		// }
+	}
+	.dialog_footer {
+		text-align: right;
+		button {
+			margin-left: 15px;
+			padding: 10px 20px;
+			margin-right: 0;
+			transition: all 0.05s linear;
+		}
+		.no_btn:hover {
+			opacity: 0;
 		}
 	}
 </style>

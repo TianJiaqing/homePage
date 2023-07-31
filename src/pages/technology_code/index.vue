@@ -117,33 +117,7 @@
 		}
 		background-color: #f1f1f1;
 	}
-	/* fade-transform */
-	.fade-leave-active,
-	.fade-enter-active {
-		transition: all 0.5s;
-	}
-
-	/* 可能为enter失效，拆分为 enter-from和enter-to */
-	.fade-enter-from {
-		opacity: 0;
-		transform: translateY(-30px);
-	}
-	.fade-enter-to {
-		opacity: 1;
-		transform: translateY(0px);
-	}
-
-	.fade-leave-to {
-		opacity: 0;
-		transform: translateY(30px);
-	}
-
-	/* fade-transform */
-	.card-leave-active,
-	.card-enter-active {
-		transition: all 1s;
-	}
-
+	
 	/* 可能为enter失效，拆分为 enter-from和enter-to */
 	.card-enter-from {
 		transform: translateX(100%);
