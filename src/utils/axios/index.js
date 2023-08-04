@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ref } from 'vue'
 let config = {
-    baseURL: 'api/', //基本地址，后面所有的url都会在此路径上拼接
+    baseURL: '/', //基本地址，后面所有的url都会在此路径上拼接
     timeout: 60 * 1000, // 超时(最长请求时间)
     withCredentials: true
 };
@@ -34,7 +34,7 @@ const getAxios = (url, params, succ, fail) => {
         async: false,
         params,
     }).then(res => {
-        if (res.success == true) {
+        if (res.code == 200) {
             succ && succ(res)
         } else {
             fail && fail(res)
@@ -61,10 +61,8 @@ const postAxios = (url, data = {}, succ, fail) => {
 
 export default function useAxios() {
     // 在这里定义你的 hook 逻辑
-    // 使用 ref 创建一个响应式变量
-    const axiosGet = ref(getAxios);
-    const axiosPost = ref(postAxios);
-
+    const axiosGet = getAxios;
+    const axiosPost = getAxios;
     // 返回需要暴露给组件使用的数据和方法
     return {
         axiosGet,

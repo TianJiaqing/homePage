@@ -228,3 +228,17 @@ button {
 .card-enter-active {
   transition: all 1s;
 }
+
+/* 表单通用css */
+input {
+  outline: 1px solid #333;
+  border-radius: 2px;
+  height: 25px;
+  border: 1px solid #333;
+}
+
+
+/* 字体风格css */
+.f_f1 {
+  font-family: YZCCQSXK;
+}

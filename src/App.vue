@@ -3,8 +3,10 @@
 	<div class="contain" v-waiting="loading">
 		<waiting />
 		<div class="d_f j_b main_contain">
-			<navigationBarPc v-if="isPc" />
-			<navigationBarMob v-else />
+			<div v-show="show_layout">
+				<navigationBarPc v-if="isPc" />
+				<navigationBarMob v-else />
+			</div>
 			<div class="right scroll_full body_scroll_full" id="body_scroll_full">
 				<router-view v-slot="{ Component }">
 					<!-- <transition name="fade"> -->
@@ -20,15 +22,19 @@
 	import navigationBarMob from "@pages/index/components/navigationBarMob.vue";
 	import waiting from "@/components/card/waiting.vue";
 	// import useAxios from '@utils/axios/index.js'
-	import { onMounted, ref } from "vue";
+	import { onMounted, ref, computed, watch } from "vue";
 	// const axiosUtil = useAxios()
-	// console.log('axiosGet++.',axiosUtil.axiosGet.value);
+	import r from "_hook/router";
+	const { route } = r();
 	const isPc = ref(true);
 	const width = document.scrollingElement.scrollWidth;
 	if (width < 500) {
 		isPc.value = false;
 	}
 	onMounted(() => {});
+	const show_layout = computed(() => {
+		return !route.meta.show_layout;
+	});
 	const loading = ref(false);
 </script>
 
