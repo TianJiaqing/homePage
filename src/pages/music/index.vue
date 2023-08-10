@@ -4,7 +4,7 @@
 		<div class="contain">
 			<div class="btn d_f a_i p_r">
 				<T-button padding="15px" color="#333" @click="routerPush('/music/home')"
-					>测试</T-button
+					>MUSIC</T-button
 				>
 			</div>
 		</div>

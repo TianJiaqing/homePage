@@ -1,7 +1,7 @@
 <template>
 	<div class="biographical_notes">
 		<div class="info_card">
-			<div class="info_name">_咸鱼前端</div>
+			<div class="info_name">{{name}}</div>
 			<div class="info_base">
 				<p>___个人简介___</p>
 				<ul>
@@ -116,6 +116,7 @@
 </template>
 <script setup>
 	import { ref } from "vue";
+	import { name } from "_hook/info";
 	const show_dialog = ref(false);
 	const change_show_dialog = () => {
 		show_dialog.value = true;

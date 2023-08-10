@@ -2,7 +2,7 @@
 	<!-- 上方个人信息卡片 -->
 	<div class="info_card">
 		<div class="d_f a_i info_card_contain">
-			<p>_咸鱼前端</p>
+			<p>{{ name }}</p>
 			<div class="div_img">
 				<img src="@/assets/images/3.jpg" alt="" />
 			</div>
@@ -14,6 +14,7 @@
 	</div>
 </template>
 <script setup>
+	import { name } from "_hook/info";
 	const goToPage = () => {
 		window.open(
 			"https://baike.baidu.com/item/%E4%B8%8D%E7%A7%AF%E8%B7%AC%E6%AD%A5/7871960?fr=ge_ala"

@@ -12,7 +12,7 @@ import bolg_detail from "@pages/bolg/components/bolg.vue";
 import piggy_bank from "@pages/piggy_bank/index.vue";
 import music from "@pages/music/index.vue";
 import music_home from "@pages/music/components/home.vue"
-
+import scroll_top from './router_scroll'
 
 import router_animate from "./router_animate.js";
 
@@ -70,15 +70,7 @@ const layout_routes =
                 subtitle: "标签2"
             }
         },
-        {
-            path: "/music",
-            component: music,
-            meta: {
-                title: "MUSIC",
-                icon: "icon-yinle",
-                subtitle: "音乐",
-            }
-        },
+        
         // {
         //     path: "/piggy_bank",
         //     component: piggy_bank,
@@ -122,6 +114,10 @@ router.beforeEach((to, from, next) => {
         next();
     });
 });
+//单页面路由跳转滚动条问题
+router.afterEach((to, from, next) => {
+    scroll_top()
+})
 export {
     router,
     routes,

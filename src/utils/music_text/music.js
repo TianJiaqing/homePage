@@ -30,11 +30,10 @@ class _audio {
                         text: item.substring(11)
                     }
                 })
-
                 setTimeout(() => {
                     this.text = arr
                     succ()
-                }, 19000);
+                }, 1000);
             });
         })
 
@@ -42,7 +41,7 @@ class _audio {
     get_url() {
         return new Promise((succ, fail) => {
             const url =
-                "http://m701.music.126.net/20230802174312/091fbce5cdc827b0142770261c8baa0e/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/14096574807/b79d/965c/96b1/ee690087dfcd2913a5dfac14e6ffcc5c.m4a";
+                "http://m801.music.126.net/20230809175427/30b1138e0b358e7a7c825ddedb985d70/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/14096574807/b79d/965c/96b1/ee690087dfcd2913a5dfac14e6ffcc5c.m4a";
             this.url = url
             this.audio = new Audio(url)
             succ()
@@ -56,10 +55,11 @@ class _audio {
                 this.start += 1
             }
         } catch (error) {
+            console.log(error);
             console.warn('audio.text is loading');
             this.start = 0
         }
-        this.el.innerText = this.lyric
+        this.el.innerText = this.lyric || '···'
         return this.lyric
     }
     get_info() {
@@ -76,13 +76,21 @@ class _audio {
             that.get_lyric()
         })
     }
-
+    //设置歌词展现元素
+    set_el(el) {
+        this.el = el
+    }
     audio_stop() {
         this.audio.pause()
         // this.audio.removeEventListener('timeupdate')
     }
 
 }
+//播放队列
+const get_list = () => audio_list
 export default function (el) {
     return new _audio(el)
+}
+export {
+    get_list
 }

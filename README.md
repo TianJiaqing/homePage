@@ -7,6 +7,9 @@
 # 安装依赖
 npm install
 
+# node版本，建议不要有太多偏差，我用14.5.0版本无法启动项目，12.2.0也无法启动项目，有nvm的能简便不少
+当前版本14.21.2
+
 # 建议不要直接使用 cnpm 安装，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
 npm install --registry=https://registry.npm.taobao.org
 

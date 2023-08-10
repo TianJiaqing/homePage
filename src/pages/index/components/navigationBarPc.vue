@@ -23,7 +23,7 @@
 	const path_name = ref(null);
 	const subtitle = ref(null);
 	onMounted(() => {
-		path_name.value = window.location.pathname;
+		path_name.value = window.location.hash.split("#").at(-1);
 	});
 	// click_times统计点击的次数，根据值来设置css变量
 	let click_times = 1;

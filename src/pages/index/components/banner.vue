@@ -7,7 +7,7 @@
 			<div class="head_sculpture">
 				<img src="@/assets/images/3.jpg" alt="" />
 			</div>
-			<p class="title">_咸鱼前端</p>
+			<p class="title">{{ name }}</p>
 			<p class="poem">
 				<span>故不积跬步，</span>
 				<span>无以至千里。</span>
@@ -22,6 +22,7 @@
 </template>
 <script setup>
 	import { ref, onMounted } from "vue";
+	import { name } from "_hook/info";
 	//滚动速度
 	const speed = 80;
 	//per_canvas 控制波浪纹占比，当前占70%
