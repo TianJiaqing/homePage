@@ -8,7 +8,7 @@
 		<img
 			src="https://img1.baidu.com/it/u=578877029,2626612357&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800"
 			alt=""
-			class="p_a img_2"
+			class="img_2"
 		/>
 	</div>
 </template>
@@ -21,16 +21,16 @@
 		background-color: #000;
 		// padding: 20px 0;
 		img {
-			width: 50%;
+			width: 100%;
 			padding: 15px;
-            height: 100%;
+            // height: 100%;
 		}
 		.max_wid_img {
 			width: 100%;
 			height: auto;
 		}
 		.img_2 {
-			height: 100%
+			// height: 100%
 		}
 		.max_wid_img_div {
 			width: 80%;

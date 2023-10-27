@@ -2,10 +2,10 @@
 <template>
 	<div class="home_page">
 		<banner v-if="show" />
-		<textContontent v-if="show" />
-		<transition name="fade">
+		<!-- <textContontent v-if="show" /> -->
+		<!-- <transition name="fade">
 			<imgageContontent v-animate="'animate_show'" />
-		</transition>
+		</transition> -->
 		<div style="height: 800px"></div>
 		<!-- <introduce /> -->
 	</div>

@@ -1,0 +1,47 @@
+{
+    "data": [
+        {
+            "id": 347230,
+            "url": "http://m701.music.126.net/20230802174312/091fbce5cdc827b0142770261c8baa0e/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/14096574807/b79d/965c/96b1/ee690087dfcd2913a5dfac14e6ffcc5c.m4a",
+            "br": 128012,
+            "size": 481115,
+            "md5": "555d31856cd048d0635a8903e3fdce2c",
+            "code": 200,
+            "expi": 1200,
+            "type": "mp3",
+            "gain": 0.0006,
+            "peak": 0,
+            "fee": 1,
+            "uf": null,
+            "payed": 0,
+            "flag": 1541380,
+            "canExtend": false,
+            "freeTrialInfo": {
+                "fragmentType": -1,
+                "start": 0,
+                "end": 30,
+                "algData": null
+            },
+            "level": "standard",
+            "encodeType": "mp3",
+            "freeTrialPrivilege": {
+                "resConsumable": true,
+                "userConsumable": false,
+                "listenType": null,
+                "cannotListenReason": null
+            },
+            "freeTimeTrialPrivilege": {
+                "resConsumable": false,
+                "userConsumable": false,
+                "type": 0,
+                "remainTime": 0
+            },
+            "urlSource": 0,
+            "rightSource": 0,
+            "podcastCtrp": null,
+            "effectTypes": null,
+            "time": 30040
+        }
+    ],
+    "code": 200
+}

@@ -92,12 +92,12 @@
 	 * current_height 当前总需滚动高度
 	 */
 	const scroll_animate = (el, speed, height, current_height) => {
+		el.scrollTop += speed;
+		height -= speed;
 		if (height <= 0) {
 			el.scrollTop = current_height;
 			return;
 		}
-		el.scrollTop += speed;
-		height -= speed;
 		requestAnimationFrame(() =>
 			scroll_animate(el, speed, height, current_height)
 		);

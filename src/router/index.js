@@ -116,7 +116,7 @@ router.beforeEach((to, from, next) => {
 });
 //单页面路由跳转滚动条问题
 router.afterEach((to, from, next) => {
-    scroll_top()
+    // scroll_top(from.path)
 })
 export {
     router,
