@@ -23,7 +23,13 @@
 	const path_name = ref(null);
 	const subtitle = ref(null);
 	onMounted(() => {
-		path_name.value = window.location.hash.split("#").at(-1);
+		//依据路由地址设置样式
+		const str = window.location.hash.split("#").at(-1);
+		if (str.includes("/")) {
+			path_name.value = "/" + str.split("/")[1];
+		} else {
+			path_name.value = str;
+		}
 	});
 	// click_times统计点击的次数，根据值来设置css变量
 	let click_times = 1;
@@ -37,7 +43,6 @@
 		}
 	};
 	const routerPushFn = (e) => {
-		console.log(e);
 		const dataset = e.target.dataset;
 		const path = dataset.path;
 		subtitle.value = dataset.subtitle;

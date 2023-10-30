@@ -39,8 +39,13 @@
 //传统方式
 import button from '@/components/overall_situation_components/button.vue'
 import dialog from '@/components/overall_situation_components/dialog.vue'
+import tabs from '@/components/overall_situation_components/tabs.vue'
 
-const component = { button, dialog }
+const component = {
+    button,
+    dialog,
+    tabs
+}
 const vue_component = (vue) => {
     for (let item in component) {
         console.log(item);
