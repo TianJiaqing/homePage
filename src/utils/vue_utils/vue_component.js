@@ -40,15 +40,18 @@
 import button from '@/components/overall_situation_components/button.vue'
 import dialog from '@/components/overall_situation_components/dialog.vue'
 import tabs from '@/components/overall_situation_components/tabs.vue'
+import select from '@/components/overall_situation_components/select.vue'
+
 
 const component = {
     button,
     dialog,
-    tabs
+    tabs,
+    select
 }
 const vue_component = (vue) => {
     for (let item in component) {
-        console.log(item);
+        // console.log(item);
         vue.component(`T-${item}`, component[item])
     }
 }

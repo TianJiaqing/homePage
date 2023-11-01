@@ -1,7 +1,7 @@
 <template>
 	<div class="biographical_notes">
 		<div class="info_card">
-			<div class="info_name">{{name}}</div>
+			<div class="info_name">{{ name }}</div>
 			<div class="info_base">
 				<p>___个人简介___</p>
 				<ul>
@@ -101,16 +101,14 @@
 		<div class="img_div">
 			<img src="@/assets/images/5.jpg" alt="" />
 		</div>
-		<transition name="fade">
-			<T-dialog v-if="show_dialog">
-				<template #footer>
-					<div class="dialog_footer">
-						<button class="no_btn">不行</button>
-						<button @click="closeDialog(2)">准奏</button>
-					</div>
-				</template>
-			</T-dialog>
-		</transition>
+		<T-dialog :flg="show_dialog">
+			<template #footer>
+				<div class="dialog_footer">
+					<button class="no_btn">不行</button>
+					<button @click="closeDialog(2)">准奏</button>
+				</div>
+			</template>
+		</T-dialog>
 		<div style="height: 200px"></div>
 	</div>
 </template>

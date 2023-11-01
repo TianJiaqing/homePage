@@ -4,10 +4,10 @@
         console.log("callback");
     };
     const f = new _(callback, 200);
-    //对应函数绑定f.throttle或f.debounce即可
+    //对应函数换成 f.throttle 或 f.debounce 进行调用即可
 */
 class _ {
-    constructor(callback = () => { }, time = 500) {
+    constructor(callback = () => {}, time = 500) {
         this.callback = callback
         this.throttle_time = new Date();
         this.time = time

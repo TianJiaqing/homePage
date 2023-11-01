@@ -1,28 +1,47 @@
 <template>
-	<div class="dialog t0_l0 d_f j_c a_i">
-		<div class="d_f j_b">
-			<!-- 头 -->
-			<div class="dialog_header">
-				<p>抱歉啊</p>
-			</div>
-			<!-- 身 -->
+	<transition name="fade">
+		<div class="dialog t0_l0 d_f j_c a_i" v-if="flg">
+			<div class="d_f j_b">
+				<!-- 头 -->
+				<slot name="header">
+					<div class="dialog_header">
+						<p>提示</p>
+					</div>
+				</slot>
 
-			<slot name="content">
-				<div class="dialog_content">
-					<p>不想写这个功能的代码了，请手动滑动到屏幕最上方！</p>
-				</div>
-			</slot>
-			<!-- 尾 -->
-			<slot name="footer">
-				<div class="dialog_footer">
-					<button @click="$emit('closeDialog', 1)">取消</button>
-					<button @click="$emit('closeDialog', 2)">确定</button>
-				</div>
-			</slot>
+				<!-- 身 -->
+
+				<slot name="content">
+					<div class="dialog_content">
+						<p>{{ title }}</p>
+					</div>
+				</slot>
+				<!-- 尾 -->
+				<slot name="footer">
+					<div class="dialog_footer">
+						<button @click="$emit('closeDialog', 1)">取消</button>
+						<button @click="$emit('closeDialog', 2)">确定</button>
+					</div>
+				</slot>
+			</div>
 		</div>
-	</div>
+	</transition>
 </template>
 <script setup>
+	import { onMounted, ref } from "vue";
+	const prop = defineProps({
+		//内容
+		title: {
+			type: String,
+			default: "不想写这个功能的代码了，请手动滑动到屏幕最上方！",
+		},
+		//控制出现和隐藏
+		flg: {
+			type: Boolean,
+			default: false,
+		},
+	});
+	onMounted(() => {});
 </script>
 
 <style scoped lang="less">
@@ -35,7 +54,7 @@
 		> div {
 			width: 50vw;
 			font-weight: 300;
-			height: 200px;
+			min-height: 200px;
 			box-shadow: 0px -2px 50px 0px rgba(0, 0, 0, 0.1);
 			background-color: white;
 			padding: 15px;
@@ -55,9 +74,13 @@
 
 			button {
 				margin-left: 15px;
-				padding: 10px 20px;
+				padding: 5px 20px;
 				margin-right: 0;
 				transition: all 0.2s linear;
+				&:hover {
+					background-color: rgba(64, 158, 255, 0.4);
+					color: #fff;
+				}
 			}
 			.no_btn:hover {
 				opacity: 0;

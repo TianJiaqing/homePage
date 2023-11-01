@@ -15,7 +15,7 @@ import music_home from "@pages/music/components/home.vue"
 import scroll_top from './router_scroll'
 
 
-import table_select from '@pages/bookmark/components/table_select.vue'
+// import table_select from '@pages/bookmark/components/table_select.vue'
 
 import router_animate from "./router_animate.js";
 
@@ -23,7 +23,7 @@ import use_path_name from "_hook/path_name.js";
 
 //忽略路由跳转动画
 //数组元素为路由路径
-const ignore_router_animate_arr = ['/bolg_detail','/bookmark/table']
+const ignore_router_animate_arr = ['/bolg_detail']
 //导航栏信息
 const layout_routes = [{
         path: "/",
@@ -56,6 +56,7 @@ const layout_routes = [{
     {
         path: "/bookmark",
         component: bookmark,
+        redirect: "/bookmark/table",
         meta: {
             title: "MARK",
             icon: "icon-shuqian",
@@ -63,8 +64,11 @@ const layout_routes = [{
         },
         children: [{
             path: 'table',
-            component: table_select
-        }, ]
+            component: () => import('@pages/bookmark/components/table_select.vue')
+        }, {
+            path: 'echarts',
+            component: () => import('@pages/bookmark/components/echarts.vue')
+        }]
     },
     {
         path: "/bolg",

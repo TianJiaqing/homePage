@@ -24,9 +24,14 @@
 			name: "电子签名",
 			value: 3,
 		},
+		{
+			name: "IM聊天",
+			value: 4,
+		},
 	]);
 	const list_router = {
 		1: "/bookmark/table",
+		2: "/bookmark/echarts",
 	};
 
 	const tabs_change = (data, index) => {
