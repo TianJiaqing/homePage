@@ -23,10 +23,10 @@
 	});
 	let emit = defineEmits(["change"]);
 	let list = ref([]);
+	let current_value = ref(0);
 	onMounted(() => {
 		list.value = props.list;
 	});
-	let current_value = ref(0);
 
 	const change = (data, index) => {
 		current_value.value = index;

@@ -28,6 +28,10 @@
 			name: "IM聊天",
 			value: 4,
 		},
+		{
+			name: "富文本",
+			value: 5,
+		},
 	]);
 	const list_router = {
 		1: "/bookmark/table",
