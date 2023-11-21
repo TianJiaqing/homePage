@@ -64,10 +64,13 @@ const layout_routes = [{
         },
         children: [{
             path: 'table',
-            component: () => import('@pages/bookmark/components/table_select.vue')
+            component: () => import('@pages/bookmark/tabs/table/table_select.vue')
         }, {
             path: 'echarts',
-            component: () => import('@pages/bookmark/components/echarts.vue')
+            component: () => import('@pages/bookmark/tabs/echarts/echarts.vue')
+        }, {
+            path: 'signature',
+            component: () => import('@pages/bookmark/tabs/signature/index.vue')
         }]
     },
     {

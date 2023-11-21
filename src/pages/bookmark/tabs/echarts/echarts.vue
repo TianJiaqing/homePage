@@ -13,7 +13,12 @@
 	onMounted(() => {
 		const init = () => {
 			{
+				// const dom = document.querySelector(".echarts_content")
+				// dom.style.height = dom.offsetWidth * 1 +"px"
+			}
+			{
 				const dom = document.getElementById("main1");
+				dom.style.height = dom.offsetWidth * .5 +"px"
 				$E(dom, {
 					// backgroundColor: "#100C2A",
 					xAxis: {
@@ -41,7 +46,7 @@
 			}
 			{
 				const dom = document.getElementById("main2");
-
+				dom.style.height = dom.offsetWidth * .5 +"px"
 				$E(dom, {
 					title: {
 						text: "当红明星的某某内容统计",
@@ -80,6 +85,8 @@
 			}
 			{
 				const dom = document.getElementById("main3");
+				dom.style.height = dom.offsetWidth * .5 +"px"
+
 				$E(dom, {
 					xAxis: {
 						type: "category",

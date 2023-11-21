@@ -15,32 +15,33 @@
 		{
 			name: "表格查询",
 			value: 1,
+			path: "/bookmark/table",
 		},
 		{
 			name: "大屏效果",
 			value: 2,
+			path: "/bookmark/echarts",
 		},
 		{
 			name: "电子签名",
 			value: 3,
+			path: "/bookmark/signature",
 		},
 		{
 			name: "IM聊天",
 			value: 4,
+			path: "/bookmark/table",
 		},
 		{
 			name: "富文本",
 			value: 5,
+			path: "/bookmark/table",
 		},
 	]);
-	const list_router = {
-		1: "/bookmark/table",
-		2: "/bookmark/echarts",
-	};
 
 	const tabs_change = (data, index) => {
 		routerPush({
-			path: list_router[data.value],
+			path: data.path,
 		});
 	};
 </script>

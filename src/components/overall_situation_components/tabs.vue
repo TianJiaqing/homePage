@@ -15,6 +15,9 @@
 </template>
 <script setup>
 	import { ref, onMounted } from "vue";
+	import r from "_hook/router";
+	const { route } = r();
+
 	let props = defineProps({
 		list: {
 			type: Array,
@@ -26,6 +29,13 @@
 	let current_value = ref(0);
 	onMounted(() => {
 		list.value = props.list;
+		const path_name = route.path;
+		list.value.some((item, index) => {
+			if (item.path == path_name) {
+				current_value.value = index;
+				return true;
+			}
+		});
 	});
 
 	const change = (data, index) => {
@@ -37,20 +47,21 @@
 <style scoped lang="less" >
 	.tabs_div {
 		ul {
+			--color: #409eff;
 			display: flex;
 			cursor: pointer;
 			text-align: center;
-            color: #000;
+			color: #000;
 			li {
 				padding: 5px;
 				// border: 1px solid;
 				margin: 0 5px;
 			}
 			.tabs_focus {
-				border-bottom: 2px double #409EFF;
+				border-bottom: 2px double var(--color);
 				position: relative;
-                text-decoration: line-through;
-                color: #409EFF;
+				text-decoration: line-through;
+				color: var(--color);
 			}
 		}
 	}

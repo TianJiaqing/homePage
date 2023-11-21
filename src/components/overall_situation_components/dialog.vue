@@ -46,17 +46,18 @@
 
 <style scoped lang="less">
 	.dialog {
+		--color: rgba(0, 0, 0, 0.1);
 		position: fixed;
 		width: 100vw;
 		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: var(--color);
 
 		> div {
 			width: 50vw;
 			font-weight: 300;
 			min-height: 200px;
-			box-shadow: 0px -2px 50px 0px rgba(0, 0, 0, 0.1);
-			background-color: white;
+			box-shadow: 0px -2px 50px 0px var(--color);
+			background-color: #fff;
 			padding: 15px;
 			flex-direction: column;
 			align-items: space-between;
@@ -78,7 +79,7 @@
 				margin-right: 0;
 				transition: all 0.2s linear;
 				&:hover {
-					background-color: rgba(64, 158, 255, 0.4);
+					background-color: rgba(64, 158, 255, 0.8);
 					color: #fff;
 				}
 			}

@@ -54,6 +54,7 @@
 
 <style scoped lang='less'>
 	.table_bottom {
+		--color: #409eff;
 		font-family: YZCCQSXK;
 		display: flex;
 		align-items: center;
@@ -62,8 +63,8 @@
 			margin: 0 5px;
 			width: 20px;
 			height: 20px;
-			color: #409eff;
-			border: 1px solid #409eff;
+			color: var(--color);
+			border: 1px solid var(--color);
 			border-radius: 5px;
 			display: flex;
 			align-items: center;
@@ -77,14 +78,11 @@
 			color: #000;
 		}
 		.table_bottom_focus {
-			background-color: #409eff;
+			background-color: var(--color);
 			color: #fff;
 		}
 		.div_disabled {
 			cursor: not-allowed;
-			// background-color: rgba(0, 0, 0, 0.1);
-			// color: #999;
-			// border: 1px solid #999;
 		}
 	}
 </style>

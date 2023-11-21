@@ -3,15 +3,7 @@
 	<div class="table_div">
 		<ul>
 			<li><span>姓名：</span><input type="text" v-model="form.name" /></li>
-			<li>
-				<span>职位：</span
-				><select v-model="form.work">
-					<option value="WEB">WEB</option>
-					<option value="职位一">职位一</option>
-					<option value="职位二">职位二</option>
-					<option value="职位三">职位三</option>
-				</select>
-			</li>
+			<li><span>职位：</span><input type="text" v-model="form.work" /></li>
 			<li><span>薪资：</span><input type="text" v-model="form.money" /></li>
 			<li>
 				<button @click="select">查询</button>

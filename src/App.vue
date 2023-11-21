@@ -34,6 +34,7 @@
 	onMounted(() => {});
 	const show_layout = computed(() => {
 		return !route.meta.show_layout;
+		// return route.meta.show_layout;
 	});
 	const loading = ref(false);
 </script>
