@@ -4,8 +4,8 @@
 			<div class="d_f j_b">
 				<!-- 头 -->
 				<slot name="header">
-					<div class="dialog_header">
-						<p>提示</p>
+					<div class="dialog_header" v-if="type">
+						<p>{{type}}</p>
 					</div>
 				</slot>
 
@@ -39,6 +39,11 @@
 		flg: {
 			type: Boolean,
 			default: false,
+		},
+		//控制左上方的提示文字
+		type: {
+			type: String,
+			default: "提示",
 		},
 	});
 	onMounted(() => {});

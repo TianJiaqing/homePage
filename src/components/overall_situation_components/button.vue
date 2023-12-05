@@ -16,11 +16,15 @@
 			type: String,
 			default: "10px 35px",
 		},
+		size: {
+			type: String,
+			default: "18px",
+		},
 	});
 	const btn = ref(null);
 	onMounted(() => {
-		const { color, padding } = JSON.parse(JSON.stringify(prop));
-		btn.value.style = `--color:${color};--padding:${padding}`;
+		const { color, padding, size } = JSON.parse(JSON.stringify(prop));
+		btn.value.style = `--color:${color};--padding:${padding};--size:${size}`;
 	});
 </script>
 
@@ -29,11 +33,12 @@
 	.btn {
 		--color: blue;
 		--padding: "10px 35px";
+		--size:18px;
 		border: none;
 		display: block;
 		position: relative;
 		padding: var(--padding);
-		font-size: 18px;
+		font-size: var(--size);
 		background: white;
 		cursor: pointer;
 		user-select: none;
@@ -41,6 +46,7 @@
 		color: var(--color);
 		z-index: 1;
 		font-family: inherit;
+		text-align: center;
 	}
 
 	.btn span {

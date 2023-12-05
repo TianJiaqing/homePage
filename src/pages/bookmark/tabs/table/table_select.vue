@@ -285,14 +285,15 @@
 					display: inline-block;
 				}
 				button {
-					padding: 2px 15px;
+					padding: 5px 18px;
 					font-size: 12px;
-					border: 1px solid #666;
-					color: #666;
+					background-color: #409eff;
+					border: 1px solid #409eff;
+					color: #fff;
 					&:hover {
-						background-color: #409eff;
-						color: #fff;
-						border: 1px solid #409eff;
+						background-color: #fff;
+						color: #666;
+						border: 1px solid #666;
 						transition: all 0.2s ease-in-out;
 					}
 				}

@@ -2,7 +2,9 @@
 <template>
 	<div class="tabs">
 		<T-tabs @change="tabs_change" :list="list"></T-tabs>
-		<router-view></router-view>
+		<div class="router-view">
+			<router-view ></router-view>
+		</div>
 	</div>
 </template>
 <script setup>
@@ -26,4 +28,10 @@
 </script>
 
 <style scoped lang="less">
+	.tabs {
+		.router-view {
+			height: calc(100vh - 50px);
+			overflow: visible auto;
+		}
+	}
 </style>
