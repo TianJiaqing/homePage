@@ -9,36 +9,15 @@
 	import { ref } from "vue";
 	import r from "_hook/router.js";
 	const { routerPush } = r();
-
-	// import card from "./components/card.vue";
-	const list = ref([
-		{
-			name: "表格查询",
-			value: 1,
-			path: "/bookmark/table",
-		},
-		{
-			name: "大屏效果",
-			value: 2,
-			path: "/bookmark/echarts",
-		},
-		{
-			name: "电子签名",
-			value: 3,
-			path: "/bookmark/signature",
-		},
-		{
-			name: "IM聊天",
-			value: 4,
-			path: "/bookmark/table",
-		},
-		{
-			name: "富文本",
-			value: 5,
-			path: "/bookmark/table",
-		},
-	]);
-
+	//导入bookmark子路由信息
+	import bookmark_children from "@/router/utils/bookmark";
+	//基本的bookmark路径
+	const base_url = "/bookmark/";
+	const list = bookmark_children.map(({ meta, path }) => ({
+		name: meta.name,
+		value: meta.value,
+		path: base_url + path,
+	}));
 	const tabs_change = (data, index) => {
 		routerPush({
 			path: data.path,

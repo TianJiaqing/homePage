@@ -4,22 +4,17 @@ import {
 } from "vue-router";
 import index from "@pages/index/index.vue";
 import technology_code from "@pages/technology_code/index.vue";
-import technology_detail from "@pages/technology_code/components/detail.vue";
 import biographical_notes from "@pages/biographical_notes/index.vue";
 import bookmark from "@pages/bookmark/index.vue";
 import bolg from "@pages/bolg/index.vue";
 import bolg_detail from "@pages/bolg/components/bolg.vue";
-import piggy_bank from "@pages/piggy_bank/index.vue";
-import music from "@pages/music/index.vue";
 import music_home from "@pages/music/components/home.vue"
-import scroll_top from './router_scroll'
 
-
-// import table_select from '@pages/bookmark/components/table_select.vue'
 
 import router_animate from "./router_animate.js";
-
 import use_path_name from "_hook/path_name.js";
+//bookmark子路由信息
+import bookmark_children from './utils/bookmark'
 
 //忽略路由跳转动画
 //数组元素为路由路径
@@ -62,16 +57,6 @@ const layout_routes = [{
             icon: "icon-shuqian",
             subtitle: "标签"
         },
-        children: [{
-            path: 'table',
-            component: () => import('@pages/bookmark/tabs/table/table_select.vue')
-        }, {
-            path: 'echarts',
-            component: () => import('@pages/bookmark/tabs/echarts/echarts.vue')
-        }, {
-            path: 'signature',
-            component: () => import('@pages/bookmark/tabs/signature/index.vue')
-        }]
     },
     {
         path: "/bolg",
@@ -82,17 +67,6 @@ const layout_routes = [{
             subtitle: "标签2"
         }
     },
-
-    // {
-    //     path: "/piggy_bank",
-    //     component: piggy_bank,
-    //     meta: {
-    //         title: "BANK",
-    //         icon: "icon-cunqianguan",
-    //         subtitle: "钱是攒出来的"
-    //     }
-    // },
-
 ]
 //其它路由信息
 const routes = [{
@@ -111,7 +85,17 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes: [...layout_routes, ...routes, ]
 });
-
+router.addRoute({
+    path: "/bookmark",
+    component: bookmark,
+    redirect: "/bookmark/table",
+    meta: {
+        title: "MARK",
+        icon: "icon-shuqian",
+        subtitle: "标签"
+    },
+    children: bookmark_children
+})
 router.beforeEach((to, from, next) => {
     const {
         path
