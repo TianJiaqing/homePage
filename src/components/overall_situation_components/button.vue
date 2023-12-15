@@ -33,13 +33,13 @@
 	.btn {
 		--color: blue;
 		--padding: "10px 35px";
-		--size:18px;
+		--size: 18px;
 		border: none;
 		display: block;
 		position: relative;
 		padding: var(--padding);
 		font-size: var(--size);
-		background: white;
+		background: #fff;
 		cursor: pointer;
 		user-select: none;
 		overflow: hidden;

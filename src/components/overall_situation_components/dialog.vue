@@ -5,7 +5,7 @@
 				<!-- 头 -->
 				<slot name="header">
 					<div class="dialog_header" v-if="type">
-						<p>{{type}}</p>
+						<p>{{ type }}</p>
 					</div>
 				</slot>
 
@@ -62,6 +62,7 @@
 			font-weight: 300;
 			min-height: 200px;
 			box-shadow: 0px -2px 50px 0px var(--color);
+			border-radius: 5px;
 			background-color: #fff;
 			padding: 15px;
 			flex-direction: column;

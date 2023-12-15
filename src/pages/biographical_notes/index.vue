@@ -20,6 +20,20 @@
 			</div>
 		</div>
 		<div class="title_card">
+			<p class="title">写在最前面</p>
+			<ul>
+				<li>当你们看到这段文字的时候，说明我成功了</li>
+				<li>
+					我不止一次去规划搭建个人网站，在我这短短两年的生涯里，我尝试了多次
+				</li>
+				<li>也失败了无数次，所有的失败都归咎于自己的懒惰</li>
+				<li>
+					每次的搭建不仅只有三分钟热度，甚至代码都是胡编乱写，也无任何ui页面审美
+				</li>
+				<li>但这次，我坚持下来了！</li>
+			</ul>
+		</div>
+		<div class="title_card">
 			<p class="title">码农</p>
 			<ul>
 				<li>富含两年码龄摸鱼经验。</li>
@@ -63,18 +77,20 @@
 				<li>
 					很幸运的是，性格不算孤僻，无沟通障碍，无身体缺陷，家里人都很健康。
 				</li>
+				<li>另外，我始终坚信：不积跬步无以至千里。</li>
 			</ul>
 		</div>
 		<div class="title_card">
 			<p class="title">关于这个系统</p>
 			<ul>
+				<li>99%的效果均为手撕。</li>
 				<li>做系统的初衷：</li>
 				<li>毫不避讳的说，为了装*。</li>
 				<li>隐晦的说，要磨练技术，技术增长的太慢了。</li>
 			</ul>
 			<ul>
 				<li>技术选型：</li>
-				<li>运用的技术，三剑客、vue3、axios。</li>
+				<li>运用的技术，三剑客、vue3、axios、无任何其它插件使用。</li>
 			</ul>
 		</div>
 		<div class="title_card">

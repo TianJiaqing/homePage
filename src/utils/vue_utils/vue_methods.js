@@ -16,9 +16,9 @@ const $confirm = (options) => {
             flg,
             ...options,
             onCloseDialog: (val) => {
+                //容器自我移除
+                container.remove()
                 if (val == 2) {
-                    //容器自我移除
-                    container.remove()
                     succ(val)
                 } else {
                     fail(val)

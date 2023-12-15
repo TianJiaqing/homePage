@@ -56,7 +56,7 @@ import img_url from '@/assets/images/2.jpg';
 
 <style scoped lang="less">
 	.msg_card {
-		margin: 40px 0;
+		// margin: 40px 0;
 		padding: 0 10px;
 		// margin-top: 0;
 		margin-bottom: 0;
