@@ -105,5 +105,8 @@
 		display: inline-block;
 		text-align: center;
 		font-size: 20px;
+		background: url("@/assets/images/2.jpg");
+		color: transparent;
+		-webkit-background-clip: text;
 	}
 </style>

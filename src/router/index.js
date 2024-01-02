@@ -25,7 +25,7 @@ const layout_routes = [{
         component: index,
         meta: {
             title: 'HOME',
-            icon: "icon-iconhuaban1-15",
+            icon: "icon-shouyefill",
             subtitle: "一个简单的首页"
         }
     },
@@ -34,7 +34,7 @@ const layout_routes = [{
         component: technology_code,
         meta: {
             title: "PYQ",
-            icon: "icon-keji",
+            icon: "icon-iconfontzhizuobiaozhunbduan36",
             subtitle: "去看一看梦里的风"
         },
     },
@@ -43,7 +43,7 @@ const layout_routes = [{
         component: biographical_notes,
         meta: {
             title: "ME",
-            icon: "icon-jianli",
+            icon: "icon-wode1",
             subtitle: "今日方知我是我"
 
         }
@@ -54,7 +54,7 @@ const layout_routes = [{
         redirect: "/bookmark/table",
         meta: {
             title: "MARK",
-            icon: "icon-shuqian",
+            icon: "icon-xiangmuzonglan",
             subtitle: "标签"
         },
     },
@@ -63,8 +63,8 @@ const layout_routes = [{
         component: bolg,
         meta: {
             title: "BOLG",
-            icon: "icon-boke1",
-            subtitle: "标签2"
+            icon: "icon-boke2",
+            subtitle: "博客"
         }
     },
 ]
